@@ -54,7 +54,7 @@ Player.prototype.update = function(){
 
     if (this.x <= -10 || this.x >= 405){// keeps the player on the board
         this.x -= this.change_x;
-    };
+    }
 
     this.change_x = 0;//only allows player advance one square at a time
 
@@ -62,15 +62,15 @@ Player.prototype.update = function(){
 
     if (this.y <= -30 || this.y >= 420 ){// keeps player on board
         this.y -= this.change_y;
-    };
+    }
 
     this.change_y = 0;// only allows player to advance on ssquare at a time
 
     if (this.y <= 25) {//puts the player back to the start when he wins. #endlessGAME
-        while (player.y <= 400){
-            player.y += 1;
-            player.x = 200;
-        };
+        while (this.y <= 400){
+            this.y += 1;
+            this.x = 200;
+        }
     }
 
 };
@@ -105,8 +105,8 @@ var collide = function (enemy_bug) {//collide function checks to see if the two 
         while (player.y <= 400){
             player.y += 1;
             player.x = 200;
-        };
-    };
+        }
+    }
 };
 
 // Now instantiate your objects.
@@ -117,9 +117,9 @@ var allEnemies = [];// array of enemies
 allEnemies.push(new Enemy());// instantiates bug 
 
 
-for (i = 0 ; i < 5 ; i++){ // makes 5 bugs with allEnemies
+for (var i = 0 ; i < 5 ; i++){ // makes 5 bugs with allEnemies
     allEnemies.push(new Enemy());
-};
+}
 
 var player = new Player();// instantiates player
 
